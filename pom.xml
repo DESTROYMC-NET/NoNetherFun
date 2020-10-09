@@ -6,7 +6,7 @@
 
     <groupId>lol.hyper</groupId>
     <artifactId>nonetherfun</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${git.commit.id.describe-short}</version>
     <packaging>jar</packaging>
 
     <name>NoNetherFun</name>
