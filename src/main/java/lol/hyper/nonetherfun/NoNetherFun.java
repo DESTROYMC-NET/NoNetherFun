@@ -37,7 +37,9 @@ public final class NoNetherFun extends JavaPlugin implements Listener {
         Block placed = event.getBlock();
         if (placed.getWorld().getEnvironment().toString().equals("NETHER")) {
             if (placed.getY() >= 128) {
-                Bukkit.getLogger().info(event.getPlayer().getName() + " tried placing a block above the nether roof. Location: " + event.getPlayer().getLocation());
+                Bukkit.getLogger()
+                        .info(event.getPlayer().getName() + " tried placing a block above the nether roof. Location: "
+                                + event.getPlayer().getLocation());
                 event.setCancelled(true);
             }
         }
@@ -48,7 +50,9 @@ public final class NoNetherFun extends JavaPlugin implements Listener {
         Block placed = event.getBlockPlaced();
         if (placed.getWorld().getEnvironment().toString().equals("NETHER")) {
             if (placed.getY() >= 128) {
-                Bukkit.getLogger().info(event.getPlayer().getName() + " tried breaking a block above the nether roof. Location: " + event.getPlayer().getLocation());
+                Bukkit.getLogger()
+                        .info(event.getPlayer().getName() + " tried breaking a block above the nether roof. Location: "
+                                + event.getPlayer().getLocation());
                 event.setCancelled(true);
             }
         }
