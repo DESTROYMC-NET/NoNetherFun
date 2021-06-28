@@ -18,6 +18,7 @@
 package lol.hyper.nonetherfun;
 
 import org.bukkit.Bukkit;
+import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -35,7 +36,7 @@ public final class NoNetherFun extends JavaPlugin implements Listener {
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
         Block placed = event.getBlock();
-        if (placed.getWorld().getEnvironment().toString().equals("NETHER")) {
+        if (placed.getWorld().getEnvironment() == World.Environment.NETHER) {
             if (placed.getY() >= 128) {
                 Bukkit.getLogger()
                         .info(event.getPlayer().getName() + " tried placing a block above the nether roof. Location: "
@@ -48,7 +49,7 @@ public final class NoNetherFun extends JavaPlugin implements Listener {
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent event) {
         Block placed = event.getBlockPlaced();
-        if (placed.getWorld().getEnvironment().toString().equals("NETHER")) {
+        if (placed.getWorld().getEnvironment() == World.Environment.NETHER) {
             if (placed.getY() >= 128) {
                 Bukkit.getLogger()
                         .info(event.getPlayer().getName() + " tried breaking a block above the nether roof. Location: "
